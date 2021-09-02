@@ -33,4 +33,4 @@ def predict():
     return render_template('home.html', prediction_text='ML algorithm predicts{}'.format(res_val))
 
 if __name__ == "__main__":
-    app.run(port=3000, debug=True)
+    app.run()
