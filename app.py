@@ -9,7 +9,7 @@ model = pickle.load(open('./final_model.sav', 'rb'))
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('./home.html')
 
 @app.route('/predict',methods=['POST'])
 def predict():
@@ -30,7 +30,7 @@ def predict():
         res_val = " No Breast Cancer"
         
 
-    return render_template('home.html', prediction_text='ML algorithm predicts{}'.format(res_val))
+    return render_template('./home.html', prediction_text='ML algorithm predicts{}'.format(res_val))
 
 if __name__ == "__main__":
     app.run()
