@@ -5,7 +5,7 @@ from flask import Flask, request, render_template
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open('/Users/saniamo/Desktop/Breast_Cancer_copy/final_model.sav', 'rb'))
+model = pickle.load(open('./final_model.sav', 'rb'))
 
 @app.route('/')
 def home():
