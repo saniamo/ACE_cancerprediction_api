@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+
+  <style>
+    /* CSS code for button */
+    body {
+      height: 250px;
+      background-image: url('angiola-harry-nJv6xnlpNaA-unsplash.jpg');
+      background-color: #f18fa2; 
+      background-repeat: no-repeat;
+      background-attachment:scroll;
+      background-position: right top;
+	     }
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+    
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+  </style>
+</head>
+
+ 
+ <div class="login">
+<head>
+<style>
+	h1 { font-size: 27px;
+	 font-family: "Verdana", Verdana; 
+	 }
+	 p.a { 
+	 font-family: Arial, Helvetica, sans-serif;
+         font-size: 100%; 
+	 }
+</style>
+</head>
+	 <body>
+
+    <!-- Get input to predict cancer -->
+	 <p> <strong> <h1> BREAST CANCER DETECTION USING MACHINE LEARNING </h1> </strong> </p>
+<!--div style="height:300px;background-color:#DB7093;"-->
+    <div>
+    <form action="{{ url_for('predict')}}" method="POST">
+        <!-- <input type="text" name="comment"/> -->
+      <strong> <p class="a"> Enter the value of tumor features </strong> </p>
+      <input type="text" name="radius_mean" placeholder="radius_mean" required="required" /><br>
+      <input type="text" name="texture_mean" placeholder="texture_mean" required="required" /><br>
+      <input type="text" name="perimeter_mean" placeholder="perimeter_mean" required="required" /><br>
+      <input type="text" name="area_mean" placeholder="area_mean" required="required" /><br>
+      <input type="text" name="compactness_mean" placeholder="compactness_mean" required="required" /><br>
+      <input type="text" name="concavity_mean" placeholder="concavity_mean" required="required" /><br>
+      <input type="text" name="perimeter_se" placeholder="perimeter_se" required="required" /><br>
+      <input type="text" name="area_se" placeholder="area_se" required="required" /><br>
+      <input type="text" name="radius_worst" placeholder="radius_worst" required="required" />  <br> 
+      <input type="text" name="texture_worst" placeholder="texture_worst" required="required" /><br>
+      <input type="text" name="perimeter_worst" placeholder="perimeter_worst" required="required" /><br>
+      <input type="text" name="area_worst" placeholder="area_worst" required="required" /><br>
+      <input type="text" name="compactness_worst" placeholder="compactness_worst" required="required" /><br>
+      <input type="text" name="concavity_worst" placeholder="concavity_worst" required="required" />  <br> 
+      <input type="submit" class="btn-info" value="Perform Prediction">
+    </form>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+   <h1>{{ prediction_text }}</h1>
+   </div>
+
+ </div>
+
+</body>
+</html>
