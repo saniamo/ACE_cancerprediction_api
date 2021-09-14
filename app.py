@@ -17,4 +17,4 @@ def predict():
 
 if __name__ == '__main__':
     model = pickle.load(open('./final_model.sav', 'rb'))
-    app.run(debug=True, host='ace-breastcancer-prediction.herokuapp.com')
+    app.run(debug=True)
